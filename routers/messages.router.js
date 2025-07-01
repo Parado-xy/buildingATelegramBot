@@ -15,6 +15,10 @@ messageRouter.post(`/new-message`, async (req, res, next) => {
     try{
         const { message } = req.body;
 
+        // Let's actually log the request body
+        console.log(req.body); 
+
+
         //Each message contains "text" and a "chat" object, which has an "id" which is the chat id
 
         if (!message) {
