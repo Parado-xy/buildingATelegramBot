@@ -6,7 +6,7 @@ export const errMiddleware = (err, res, req, next) => {
         }
 
         // log the error to the console.
-        console.err(`AN ERROR OCCURED: \n${err}`); 
+        console.error(`AN ERROR OCCURED: \n${err}`); 
 
         // pass the error on to the next middleware. 
         next(error); 
