@@ -17,7 +17,7 @@ dispatcher(server);
 server.use(errMiddleware); 
 
 // Set port; 
-const PORT = 8443; 
+const PORT = process.env.PORT || 8443; 
 
 // Set server to listening. 
 server.listen(PORT, () => {
