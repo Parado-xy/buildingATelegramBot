@@ -17,7 +17,7 @@ dispatcher(server);
 server.use(errMiddleware); 
 
 // Set port; 
-const PORT = 5000; 
+const PORT = 8443; 
 
 // Set server to listening. 
 server.listen(PORT, () => {
