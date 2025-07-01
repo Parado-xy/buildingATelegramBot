@@ -1,4 +1,4 @@
-import messageRouter from "./messages.router";
+import messageRouter from "./messages.router.js";
 
 
 // Create dispatcher function. 
