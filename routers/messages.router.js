@@ -24,18 +24,21 @@ messageRouter.post(`/new-message`, async (req, res, next) => {
 
         console.log(`message: ${message}`);  
 
+        const BOT_TOKEN = process.env.BOT_TOKEN || "7686242328:AAGI9B8ya5viZeNsYQ69sZq-6WpZlGJNoOo";
+
         axios
-          .post(
-            "https://api.telegram.org/bot7686242328:AAGI9B8ya5viZeNsYQ69sZq-6WpZlGJNoOo/sendMessage",
-            {
-              chat_id: message.chat.id,
-              text: "Welcome to the WatchJallaCode Telegram channel!",
-            }
-          )
+          .post(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
+            chat_id: message.chat.id,
+            text: "Welcome to the WatchJallaCode Telegram channel!",
+          })
           .then((response) => {
             // We get here if the message was successfully posted
             console.log("Message posted");
             res.end("ok");
+          })
+          .catch((error) => {
+            console.error("Failed to send message:", error);
+            next(error);
           });
     }catch(error){
         next(error); 
